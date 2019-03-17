@@ -1,0 +1,29 @@
+
+const fetchPostJson = require('./fetch-json')
+const createPostDataModel = require('./create-data-model')
+const validatePostJson = require('./validate-json')
+
+const validateJson = (json) => {
+    const validation = validatePostJson(json)
+
+    if (validation.errors.length) {
+        throw new Error(validation.errors[0])
+    }
+}
+
+const getPost = async (code) => {
+    try {
+        const json = await fetchPostJson(code)
+        validateJson(json)
+        return createPostDataModel(json)
+    } catch (err) {
+        throw err
+    }
+}
+
+module.exports = {
+    getPost,
+    validatePostJson,
+    createPostDataModel,
+}
+
