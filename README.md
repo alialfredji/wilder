@@ -1,4 +1,4 @@
-This a simple instagram scraping project. Running through docker. It uses [Fetchq's node extension](https://github.com/fetchq/node-client) to process queues and Grafana to show how the queue is processing.
+This a simple instagram scraping project. Running through docker. It uses [Fetchq's node extension](https://github.com/fetchq/node-client) to process queues and Grafana to show how the queues is processing.
 
 ## Containers
 - grafana - displaying nice charts
